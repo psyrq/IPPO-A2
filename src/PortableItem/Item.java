@@ -3,11 +3,11 @@ package PortableItem;
 public class Item {
 
     private Location location;
-    private Resource resource;
+    private Image image;
 
-    public Item(Location location, Resource resource) {
+    public Item(Location location, Image image) {
         this.location = location;
-        this.resource = resource;
+        this.image = image;
     }
 
     public Location getLocation() {
@@ -18,11 +18,11 @@ public class Item {
         this.location = location;
     }
 
-    public Resource getResource() {
-        return resource;
+    public Image getImage() {
+        return image;
     }
 
-    public void setResource(Resource resource) {
-        this.resource = resource;
+    public void setImage(Image image) {
+        this.image = image;
     }
 }

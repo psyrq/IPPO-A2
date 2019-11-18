@@ -23,8 +23,12 @@ public class Player {
         return heldItems;
     }
 
-    public void addHeldItems(Item newItem) {
-        heldItems.add(newItem);
+    public void addHeldItems(Item item) {
+        heldItems.add(item);
+    }
+
+    public void removeHeldItems(Item item) {
+        heldItems.removeIf(currentItem -> currentItem.equals(item));
     }
 
     //getter and setter for directions
@@ -43,5 +47,19 @@ public class Player {
 
     public void setCurrentRoom(Room currentRoom) {
         this.currentRoom = currentRoom;
+    }
+
+    public void turn(Directions dir) {
+        direction = dir;
+    }
+
+    public void pickUp(Item item) {
+        currentRoom.removeItem(item);
+        addHeldItems(item);
+    }
+
+    public void putDown(Item item) {
+        currentRoom.addItem(item);
+        removeHeldItems(item);
     }
 }

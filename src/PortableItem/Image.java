@@ -2,12 +2,12 @@ package PortableItem;
 
 import java.awt.image.BufferedImage;
 
-public class Resource {
+public class Image {
 
     private String pictureName;
     private BufferedImage sourceImage;
 
-    public Resource(String pictureName, BufferedImage sourceImage) {
+    public Image(String pictureName, BufferedImage sourceImage) {
         this.pictureName = pictureName;
         this.sourceImage = sourceImage;
     }

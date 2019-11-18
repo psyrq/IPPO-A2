@@ -1,15 +1,17 @@
 package PortableItem;
 
+import Room.Room;
+
 public class Location {
 
     private int xAxis;
     private int yAxis;
-    private String locatedImage;
+    private Room locatedRoom;
 
-    public Location(int xAxis, int yAxis, String locatedImage) {
+    public Location(int xAxis, int yAxis, Room locatedRoom) {
         this.xAxis = xAxis;
         this.yAxis = yAxis;
-        this.locatedImage = locatedImage;
+        this.locatedRoom = locatedRoom;
     }
 
     public int getxAxis() {
@@ -28,11 +30,11 @@ public class Location {
         this.yAxis = yAxis;
     }
 
-    public String getLocatedImage() {
-        return locatedImage;
+    public Room getLocatedRoom() {
+        return locatedRoom;
     }
 
-    public void setLocatedImage(String locatedImage) {
-        this.locatedImage = locatedImage;
+    public void setLocatedRoom(Room locatedRoom) {
+        this.locatedRoom = locatedRoom;
     }
 }

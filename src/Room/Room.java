@@ -25,11 +25,15 @@ public class Room {
         itemList.add(item);
     }
 
-    public void remoteItem(Item item) {
+    public void removeItem(Item item) {
         itemList.removeIf(currentItem -> currentItem.equals(item));
     }
 
     public List<Item> getItemList() {
         return itemList;
+    }
+
+    public List<Wall> getWallList(){
+        return wallList;
     }
 }
