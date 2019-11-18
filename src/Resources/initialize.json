@@ -1,0 +1,54 @@
+{
+    "name" : "ippo-assignment2-config-file",
+
+    "room" : {
+
+        "room1" : {
+
+            "wall" : [
+                {
+                    "north-wall" : "north-wall-room1.png"
+                },
+                {
+                    "south-wall" : "south-wall-room1.png"
+                },
+                {
+                    "west-wall" : "west-wall-room1.png"
+                },
+                {
+                    "east-wall" : "east-wall-room1.png"
+                }
+            ],
+
+            "items" : [
+                {
+                    "item1" : "item1-room1.png"
+                }
+            ]
+        },
+
+        "room2" : {
+
+            "wall" : [
+                {
+                    "north-wall" : "north-wall-room2.png"
+                },
+                {
+                    "south-wall" : "south-wall-room2.png"
+                },
+                {
+                    "west-wall" : "west-wall-room2.png"
+                },
+                {
+                    "east-wall" : "east-wall-room2.png"
+                }
+            ],
+
+            "items" : [
+                {
+                    "item1" : "item1-room2.png"
+                }
+            ]
+        }
+    }
+}
