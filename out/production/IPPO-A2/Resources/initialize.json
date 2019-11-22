@@ -1,54 +1,51 @@
 {
     "name" : "ippo-assignment2-config-file",
 
-    "room" : {
+    "room" : [
 
-        "room1" : {
-
-            "wall" : [
-                {
-                    "north-wall" : "north-wall-room1.png"
-                },
-                {
-                    "south-wall" : "south-wall-room1.png"
-                },
-                {
-                    "west-wall" : "west-wall-room1.png"
-                },
-                {
-                    "east-wall" : "east-wall-room1.png"
-                }
-            ],
-
-            "items" : [
-                {
-                    "item1" : "item1-room1.png"
-                }
-            ]
-        },
-
-        "room2" : {
+        {
+            "name" : "bedroom-1",
 
             "wall" : [
                 {
-                    "north-wall" : "north-wall-room2.png"
-                },
-                {
-                    "south-wall" : "south-wall-room2.png"
-                },
-                {
-                    "west-wall" : "west-wall-room2.png"
-                },
-                {
-                    "east-wall" : "east-wall-room2.png"
-                }
-            ],
+                    "wall-image" : "north-wall-room1.jpeg",
+                    "has-door" : true,
+                    "door-to": "bedroom-2",
 
-            "items" : [
+                    "items" : [
+                        {
+                            "item-image" : "basket.png",
+                            "x-axis" : 100,
+                            "y-axis": 100
+                        },
+                        {
+                            "item-image" : "basket.png",
+                            "x-axis" : 200,
+                            "y-axis": 200
+                        }
+                    ]
+                },
                 {
-                    "item1" : "item1-room2.png"
+                    "wall-image" : "west-wall-room1.jpeg",
+                    "has-door" : true,
+                    "door-to" : "bathroom",
+                    "items" : [
+                        {
+                            "item-image" : "basket.png",
+                            "x-axis" : 300,
+                            "y-axis": 300
+                        }
+                    ]
+                },
+                {
+                    "wall-image" : "south-wall-room1.jpeg",
+                    "has-door" : false
+                },
+                {
+                    "wall-image" : "east-wall-room1.jpeg",
+                    "has-door" : false
                 }
             ]
         }
-    }
+    ]
 }

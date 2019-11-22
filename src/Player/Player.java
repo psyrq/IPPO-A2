@@ -1,8 +1,7 @@
 package Player;
 
-import Directions.Directions;
 import PortableItem.Item;
-import Room.Room;
+import Room.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,11 +9,11 @@ import java.util.List;
 public class Player {
 
     private List<Item> heldItems;
-    private Directions direction;
+    private Wall faceTo;
     private Room currentRoom;
 
-    public Player() {
-        direction = Directions.NORTH;
+    public Player(Wall faceTo) {
+        this.faceTo = faceTo;
         heldItems = new ArrayList<>();
     }
 
@@ -31,13 +30,13 @@ public class Player {
         heldItems.removeIf(currentItem -> currentItem.equals(item));
     }
 
-    //getter and setter for directions
-    public Directions getDirection() {
-        return direction;
+    //getter and setter for wall faced to
+    public Wall getFaceTo() {
+        return faceTo;
     }
 
-    public void setDirection(Directions direction) {
-        this.direction = direction;
+    public void setFaceTo(Wall faceTo) {
+        this.faceTo = faceTo;
     }
 
     //getter and setter for current room
@@ -49,17 +48,13 @@ public class Player {
         this.currentRoom = currentRoom;
     }
 
-    public void turn(Directions dir) {
-        direction = dir;
-    }
-
     public void pickUp(Item item) {
-        currentRoom.removeItem(item);
+        faceTo.removeItem(item);
         addHeldItems(item);
     }
 
     public void putDown(Item item) {
-        currentRoom.addItem(item);
+        faceTo.addItem(item);
         removeHeldItems(item);
     }
 }

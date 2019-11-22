@@ -6,12 +6,10 @@ public class Location {
 
     private int xAxis;
     private int yAxis;
-    private Room locatedRoom;
 
-    public Location(int xAxis, int yAxis, Room locatedRoom) {
+    public Location(int xAxis, int yAxis) {
         this.xAxis = xAxis;
         this.yAxis = yAxis;
-        this.locatedRoom = locatedRoom;
     }
 
     public int getxAxis() {
@@ -28,13 +26,5 @@ public class Location {
 
     public void setyAxis(int yAxis) {
         this.yAxis = yAxis;
-    }
-
-    public Room getLocatedRoom() {
-        return locatedRoom;
-    }
-
-    public void setLocatedRoom(Room locatedRoom) {
-        this.locatedRoom = locatedRoom;
     }
 }

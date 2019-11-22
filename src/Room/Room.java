@@ -7,32 +7,19 @@ import java.util.List;
 
 public class Room {
 
-    private List<Item> itemList;
+    private String name;
     private List<Wall> wallList;
 
-    public Room(List<Wall> wallList) {
-        this.itemList = new ArrayList<>();
+    public Room(String name, List<Wall> wallList) {
+        this.name = name;
         this.wallList = wallList;
-    }
-
-    public Room(List<Item> itemList, List<Wall> wallList) {
-        this.itemList = itemList;
-        this.wallList = wallList;
-    }
-
-    public void addItem(Item item) {
-        itemList.add(item);
-    }
-
-    public void removeItem(Item item) {
-        itemList.removeIf(currentItem -> currentItem.equals(item));
-    }
-
-    public List<Item> getItemList() {
-        return itemList;
     }
 
     public List<Wall> getWallList(){
         return wallList;
+    }
+
+    public String getName() {
+        return name;
     }
 }
