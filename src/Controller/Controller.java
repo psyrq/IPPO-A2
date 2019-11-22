@@ -12,15 +12,13 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
 import javafx.application.Platform;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -94,9 +92,14 @@ public class Controller {
     }
 
     public void pickUpBasket() {
-        pickup = false;
-        putDown = true;
 
+        if (player.getHeldItems().size() != 0) {
+            pickup = false;
+            putDown = true;
+        }
+        else {
+            System.out.println("no items held");
+        }
     }
 
     public void numOfBasket() {
@@ -106,7 +109,7 @@ public class Controller {
         List<Item> itemList = player.getHeldItems();
         if (itemList.size() != 0) {
             for (Item item : itemList) {
-                if (item.getName().equals("basket")) {
+                if (item.getName().equals(BASKET)) {
                     num += 1;
                 }
             }
@@ -185,20 +188,27 @@ public class Controller {
                             player.pickUp(item);
                             displayItems(player.getFaceTo());
                             System.out.println("get a new item");
+                            break;
                         }
                     }
 
-                    System.out.println("number of items remained: " + player.getFaceTo().getItems().size());
+                    System.out.println("number of items remained on screen: " + player.getFaceTo().getItems().size());
+                    System.out.println("number of items held by player: " + player.getHeldItems().size());
                 }
 
                 else if (!pickup && putDown) {
+
                     Image image = getImage(BASKET);
                     Location location = new Location((int)mouseX, (int)mouseY);
                     Item item = new Item(location, image);
+                    item.setName(BASKET);
+
                     player.putDown(item);
                     displayItems(player.getFaceTo());
                     System.out.println("put down a new item");
-                    System.out.println("number of items remained: " + player.getFaceTo().getItems().size());
+                    System.out.println("number of items remained on screen: " + player.getFaceTo().getItems().size());
+                    System.out.println("number of items held by player: " + player.getHeldItems().size());
+                    resetPickPut();
                 }
             }
         });
@@ -344,10 +354,9 @@ public class Controller {
 
                         Image image = getImage(resource);
                         Location location = new Location(xAxis, yAxis);
-                        String itemName = resource.split("\\.")[0];
 
                         Item currentItem = new Item(location, image);
-                        currentItem.setName(itemName);
+                        currentItem.setName(resource);
                         loadItems.add(currentItem);
                     }
                 }

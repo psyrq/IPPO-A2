@@ -37,4 +37,14 @@ public class Item {
     public void setName(String name) {
         this.name = name;
     }
+//
+//    @Override
+//    public boolean equals(Object obj) {
+//
+//        if (obj instanceof Item) {
+//            Item item = (Item) obj;
+//            return item.getName().equals(((Item) obj).getName());
+//        }
+//        else return false;
+//    }
 }

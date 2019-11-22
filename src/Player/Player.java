@@ -22,12 +22,20 @@ public class Player {
         return heldItems;
     }
 
-    public void addHeldItems(Item item) {
+    private void addHeldItems(Item item) {
         heldItems.add(item);
     }
 
-    public void removeHeldItems(Item item) {
-        heldItems.removeIf(currentItem -> currentItem.equals(item));
+    private void removeHeldItems(Item item) {
+
+        for (int i = 0; i < heldItems.size(); i++) {
+            if (item.getName().equals(heldItems.get(i).getName())) {
+                heldItems.remove(i);
+                break;
+            }
+        }
+//        System.out.println("held items: " + heldItems.size());
+//        heldItems.removeIf(currentItem -> currentItem.equals(item));
     }
 
     //getter and setter for wall faced to
