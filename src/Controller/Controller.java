@@ -18,7 +18,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 
-import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -124,8 +123,15 @@ public class Controller {
 
         if (faceTo != null) {
             for (Room room : allRooms) {
+
                 if (room.getName().equals(faceTo)) {
+
                     player.setCurrentRoom(room);
+
+                    Image image = player.getCurrentRoom().getWallList().get(wallIndex).getWallImage();
+                    setFaceTo(player.getCurrentRoom().getWallList().get(wallIndex));
+                    setMainImageView(image, player.getCurrentRoom().getWallList().get(wallIndex));
+
                     break;
                 }
             }

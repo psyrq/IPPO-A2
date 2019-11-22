@@ -1,7 +1,5 @@
 package PortableItem;
 
-import Room.Room;
-
 public class Location {
 
     private int xAxis;
